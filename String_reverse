@@ -1,0 +1,54 @@
+/* Reverse strings stored in an array of pointers */
+# include <stdio.h>
+void xstrrev ( char *ss ) ;
+int main( )
+{
+static char *s[ ] = {
+"hiiii...",
+"how are youuuu",
+"i am good"
+} ;
+int i ;
+for ( i = 0 ; i <= 2 ; i++ ) /* Three strings to be traversed */
+
+{
+
+xstrrev ( s[ i ] ) ;
+
+printf ( "%s\n", s[ i ] ) ;
+
+}
+
+return 0 ;
+
+}
+
+void xstrrev ( char *ss )
+
+{
+
+int l, i ;
+
+char *tt, temp ;
+
+l = strlen ( ss ) ;
+
+tt = ss + l - 1 ;
+
+for ( i = 1 ; i <= l / 2 ; i++ )
+
+{
+
+temp = *ss ;
+
+*ss = *tt ;
+
+*tt = temp ;
+
+ss++ ;
+
+tt-- ;
+
+}
+
+}
